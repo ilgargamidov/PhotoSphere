@@ -9,12 +9,12 @@ import UIKit
 
 protocol MainScreenPresenterProtocol: AnyObject{
   init(view: MainScreenViewProtocol)
-  // var posts: [PostDate]? { get set }
+   var posts: [PostDate]? { get set }
   func getPosts()
 }
 class MainScreenPresenter{
   weak var view: MainScreenViewProtocol?
-  // var posts: [PostDate]?
+   var posts: [PostDate]?
   required init(view: MainScreenViewProtocol) {
     self.view = view
     getPosts()
@@ -22,7 +22,7 @@ class MainScreenPresenter{
 }
 extension MainScreenPresenter: MainScreenPresenterProtocol{
   func getPosts() {
-    // self.posts = PostDate.getMockData()
+    self.posts = PostDate.getMockData()
     view?.showPosts()
   }
 }

@@ -17,6 +17,19 @@ protocol BuilderProtocol{
 }
 
 class Builder: BuilderProtocol {
+    static func createCameraScreenController() -> UIViewController {
+        let cameraView = CameraView()
+        return cameraView
+    }
+    
+    static func createFavoriteScreenController() -> UIViewController {
+        let favoriteView = FavoriteView()
+        let presenter = FavoriteViewPresenter(view: favoriteView)
+        
+        favoriteView.presenter = presenter
+        return UINavigationController(rootViewController: favoriteView)
+    }
+    
       
     static func getPasscodeController(passcodeState: PasscodeState, sceneDelegate: SceneDelegateProtocol) -> UIViewController{
         let passcodeView = PasscodeView()
@@ -39,21 +52,9 @@ class Builder: BuilderProtocol {
     static func createMainScreenController() -> UIViewController {
         let mainView = MainScreenView()
         let presenter = MainScreenPresenter(view: mainView)
-        mainView.presenter = presenter as? any MainScreenViewProtocol
+        mainView.presenter = presenter
         return mainView
     }
-    
-    static func createCameraScreenController() -> UIViewController {
-        let cameraView = CameraView()
-        
-        return cameraView
-    }
-    
-    static func createFavoriteScreenController() -> UIViewController {
-        let favoriteView = FavotiteView()
-        
-        return favoriteView
-    }
-    
    
 }
+
