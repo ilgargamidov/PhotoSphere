@@ -9,27 +9,26 @@ import UIKit
 
 protocol TabBarViewPresenterProtocol: AnyObject {
     init(view: TabBarViewProtocol)
+    
     func buildTabBar()
   
 }
 
-class TabBarViewPresenter: TabBarViewPresenterProtocol {
+class TabBarViewPresenter {
+    
     weak var view: TabBarViewProtocol?
     required init(view: TabBarViewProtocol) {
         self.view = view
         self.buildTabBar()
     }
-    
-    func buildTabBar() {
-        self.view?.setControllers(controllers: [])
-    }
-    
 }
-
-// Было как ниже, но в итоге удалил расширение и вернул функцию обратно в класс:
-// extension TabBarViewPresenter: TabBarViewPresenterProtocol {
-    
-//    func buildTabBar() {
-//        self.view?.setControllers(controllers: [])
-//    }
-// }
+extension TabBarViewPresenter: TabBarViewPresenterProtocol {
+   func buildTabBar() {
+       
+       let mainScreen = Builder.createMainScreenController()
+       let cameraScreen = Builder.createCameraScreenController()
+       let favoriteScreen = Builder.createFavoriteScreenController()
+       
+       self.view?.setControllers(controllers: [mainScreen, cameraScreen, favoriteScreen])
+   }
+ }
