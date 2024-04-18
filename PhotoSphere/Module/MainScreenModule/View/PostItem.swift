@@ -2,13 +2,12 @@
 //  PostItem.swift
 //  PhotoSphere
 //
-//  Created by mac on 15.04.2024.
+//  Created by Илгар Гамидов on 16.04.2024.
 //
 
 import Foundation
-import CoreLocation
 
-class PostDate: Identifiable{
+class PostDate: Identifiable {
     let id = UUID().uuidString
     let items: [PostItem]
     let date: Date
@@ -36,10 +35,12 @@ class PostDate: Identifiable{
                 PostItem(photos: ["img3"], comments: nil, tags: ["Nature","Home", "Education", "Work", "Game"], description: "labore et veniam tempor incididunt ut labore et dolore magna aliqua dolore magna aliqua", date: Date()),
             ], date: Date().addingTimeInterval(-172800))
         ]
+        
     }
+    
 }
 
-class PostItem: Identifiable{
+class PostItem: Identifiable {
     let id = UUID().uuidString
     let photos: [String]
     let comments: [Commet]?
@@ -47,26 +48,19 @@ class PostItem: Identifiable{
     let description: String?
     let isFavorite: Bool
     let date: Date
-    let location: CLLocationCoordinate2D?
     
-    
-    init(photos: [String], comments: [Commet]?, tags: [String]?, description: String?,  isFavorite: Bool = false, date: Date, location: CLLocationCoordinate2D? = nil) {
+    init(photos: [String], comments: [Commet]?, tags: [String]?, description: String?, isFavorite: Bool = false, date: Date) {
         self.photos = photos
         self.comments = comments
         self.tags = tags
         self.description = description
         self.date = date
         self.isFavorite = isFavorite
-        self.location = location
     }
     
     static func getMockItems() -> [PostItem]{
         [
-            PostItem(photos: ["img1", "img2"],
-                     
-                     comments: [Commet(date: Date(), comment: "jbdjasj SDFSD bdhbashbd hab"),Commet(date: Date(), comment: "jbdjasj  hab"),Commet(date: Date(), comment: "jbdjasj bdhbashbd hab"),Commet(date: Date(), comment: "jbdSFEFDS SD FSD SFDjasj bdhbashbd hab")],
-                     
-                     tags: ["Доfffffм", "Naturessss","Дом", "Naturesdfsdfsdf","Дом", "Nature","Дом", "Nature"], description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit", isFavorite: true, date: Date(), location: CLLocationCoordinate2D(latitude: 40.728, longitude: -74)),
+            PostItem(photos: ["img1", "img2"], comments: nil, tags: ["Дом", "Nature"], description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit", isFavorite: true, date: Date()),
             
             PostItem(photos: ["img2", "img3"], comments: nil, tags: ["Дом", "Nature"], description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit", isFavorite: true, date: Date()),
             
@@ -86,7 +80,7 @@ class PostItem: Identifiable{
     }
 }
 
-class Commet: Identifiable{
+class Commet: Identifiable {
     let id = UUID().uuidString
     let date: Date
     let comment: String
@@ -96,4 +90,3 @@ class Commet: Identifiable{
         self.comment = comment
     }
 }
-

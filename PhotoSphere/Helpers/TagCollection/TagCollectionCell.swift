@@ -7,38 +7,33 @@
 
 import UIKit
 
-protocol CollectionViewCellProtocol{
-    static var reuseId: String { get }
-    init(frame: CGRect)
-}
-
-class TagCollectionCell: UICollectionViewCell, CollectionViewCellProtocol {
+class TagCollectionCell: UICollectionViewCell {
     static let reuseId = "TagCollectionCell"
     
-    private lazy var tagView: UIView = {
+    lazy var tagView: UIView = {
         .configure(view: $0) { [weak self] tagView in
             guard let self = self else { return }
             tagView.backgroundColor = UIColor(white: 1, alpha: 0.2)
             tagView.layer.cornerRadius = 15
             tagView.addSubview(self.tagLabel)
         }
+        
     }(UIView())
     
-    private lazy var tagLabel: UILabel = {
+    lazy var tagLabel: UILabel = {
         .configure(view: $0) { label in
             label.textColor = .white
             label.font = UIFont.systemFont(ofSize: 14)
         }
     }(UILabel())
     
-    
-    required override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(tagView)
-        setConstraint()
+        setConstraints()
     }
     
-    private func setConstraint(){
+    private func setConstraints() {
         NSLayoutConstraint.activate([
             tagView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tagView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -49,7 +44,6 @@ class TagCollectionCell: UICollectionViewCell, CollectionViewCellProtocol {
             tagLabel.bottomAnchor.constraint(equalTo: tagView.bottomAnchor, constant: -5),
             tagLabel.leadingAnchor.constraint(equalTo: tagView.leadingAnchor, constant: 20),
             tagLabel.trailingAnchor.constraint(equalTo: tagView.trailingAnchor, constant: -20),
-            
         ])
     }
     
@@ -61,3 +55,4 @@ class TagCollectionCell: UICollectionViewCell, CollectionViewCellProtocol {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

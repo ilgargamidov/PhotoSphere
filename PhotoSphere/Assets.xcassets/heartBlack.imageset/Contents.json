@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "free-icon-heart-shape-silhouette-25451 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "heartBlack.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

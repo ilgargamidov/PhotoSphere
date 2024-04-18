@@ -9,7 +9,6 @@ import UIKit
 
 protocol TabBarViewPresenterProtocol: AnyObject {
     init(view: TabBarViewProtocol)
-    
     func buildTabBar()
   
 }
@@ -21,14 +20,16 @@ class TabBarViewPresenter {
         self.view = view
         self.buildTabBar()
     }
+    
 }
+
 extension TabBarViewPresenter: TabBarViewPresenterProtocol {
-   func buildTabBar() {
-       
-       let mainScreen = Builder.createMainScreenController()
-       let cameraScreen = Builder.createCameraScreenController()
-       let favoriteScreen = Builder.createFavoriteScreenController()
-       
-       self.view?.setControllers(controllers: [mainScreen, cameraScreen, favoriteScreen])
-   }
- }
+    
+    func buildTabBar() {
+        let mainScreen = Builder.createMainScreenController()
+        let cameraScreen = Builder.createCameraScreenController()
+        let favoriteScreen = Builder.createFavoriteScreenController()
+        
+        self.view?.setControllers(controllers: [mainScreen, cameraScreen, favoriteScreen])
+    }
+}

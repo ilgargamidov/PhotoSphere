@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 protocol TagCollectionViewProtocol: AnyObject {
     var dataSource: UICollectionViewDataSource { get set }
     init(dataSource: UICollectionViewDataSource)
@@ -15,7 +14,7 @@ protocol TagCollectionViewProtocol: AnyObject {
     var isEditin: Bool { get set }
 }
 
-class TagCollectionView: TagCollectionViewProtocol{
+class TagCollectionView: TagCollectionViewProtocol {
     var isEditin: Bool = false
     
     var dataSource: UICollectionViewDataSource

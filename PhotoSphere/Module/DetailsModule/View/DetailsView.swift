@@ -10,6 +10,7 @@ import UIKit
 protocol DetailsViewProtocol: AnyObject {
     
 }
+
 class DetailsView: UIViewController {
     
     var presenter: DetailsViewPresenterProtocol!
@@ -23,7 +24,6 @@ class DetailsView: UIViewController {
     
     lazy var backAction = UIAction { [weak self] _ in
         self?.navigationController?.popViewController(animated: true)
-        
     }
     
     lazy var menuAction = UIAction { [weak self] _ in
@@ -33,13 +33,12 @@ class DetailsView: UIViewController {
     lazy var navigationHeader: NavigationHeader = {
         NavigationHeader(backAction: backAction, menuAction: menuAction, date: presenter.item.date)
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appMain
         view.addSubview(topMenuView)
         setupPageHeader()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,11 +48,10 @@ class DetailsView: UIViewController {
     }
     
     private func setupPageHeader() {
-        let headerView = navigationHeader.getNavigationHeader(type: .detailsView)
+        let headerView = navigationHeader.getNavigationHeader(type: .back)
         headerView.frame.origin.y = UIApplication.topSafeArea
         view.addSubview(headerView)
     }
-    
 }
 
 extension DetailsView: DetailsViewProtocol {

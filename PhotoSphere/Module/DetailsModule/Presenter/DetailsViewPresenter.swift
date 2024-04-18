@@ -20,8 +20,4 @@ class DetailsViewPresenter: DetailsViewPresenterProtocol {
         self.view = view
         self.item = item
     }
-    
-    
-    
-    
 }

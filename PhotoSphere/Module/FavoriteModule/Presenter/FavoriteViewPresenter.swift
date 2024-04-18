@@ -2,18 +2,18 @@
 //  FavoriteViewPresenter.swift
 //  PhotoSphere
 //
-//  Created by mac on 15.04.2024.
+//  Created by Илгар Гамидов on 18.04.2024.
 //
 
 import UIKit
 
-protocol FavoriteViewPresenterProtocol: AnyObject{
+protocol FavoriteViewPresenterProtocol: AnyObject {
     init(view: FavoriteViewProtocol)
     var post: [PostItem]? { get set }
     func getPosts()
 }
 
-class FavoriteViewPresenter: FavoriteViewPresenterProtocol{
+class FavoriteViewPresenter: FavoriteViewPresenterProtocol {
     var post: [PostItem]?
     private weak var view: FavoriteViewProtocol?
     
@@ -24,7 +24,7 @@ class FavoriteViewPresenter: FavoriteViewPresenterProtocol{
     
     func getPosts() {
         self.post = PostItem.getMockItems()
-        self.view?.showPost()
+        self.view?.showPosts()
     }
 }
 

@@ -2,7 +2,7 @@
 //  Date.ext.swift
 //  PhotoSphere
 //
-//  Created by mac on 15.04.2024.
+//  Created by Илгар Гамидов on 16.04.2024.
 //
 
 import UIKit
@@ -29,7 +29,8 @@ extension Date{
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "ru")
         
-        switch formatType{
+        switch formatType {
+            
         case .full:
             formatter.dateFormat = "dd MMMM yyyy"
         case .onlyDate:
@@ -46,4 +47,3 @@ extension Date{
 enum DateFormatType {
     case full, onlyDate, onlyYear
 }
-

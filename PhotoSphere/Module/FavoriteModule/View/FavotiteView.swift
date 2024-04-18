@@ -7,22 +7,22 @@
 
 import UIKit
 
-protocol FavoriteViewProtocol: AnyObject{
-    func showPost()
+protocol FavoriteViewProtocol: AnyObject {
+    func showPosts()
 }
 
-class FavoriteView: UIViewController {
+class FavotiteView: UIViewController {
     
     var presenter: FavoriteViewPresenterProtocol!
-    
+
     lazy var collectionView: UICollectionView = {
+        let itemSize = (view.bounds.width - 60) / 2 - 15
         
-        let itemSize = ((view.bounds.width - 60) / 2) - 15
         let layout = $0.collectionViewLayout as! UICollectionViewFlowLayout
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: itemSize,
-                                 height: itemSize)
+        layout.itemSize = CGSize(width: itemSize, height: itemSize)
         layout.minimumLineSpacing = 30
+        //layout.minimumInteritemSpacing = 30
         layout.sectionInset = UIEdgeInsets(top: 50, left: 30, bottom: 80, right: 30)
         
         $0.showsVerticalScrollIndicator = false
@@ -35,7 +35,6 @@ class FavoriteView: UIViewController {
         return $0
     }(UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout()))
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appMain
@@ -45,10 +44,9 @@ class FavoriteView: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupNavBar()
-       
     }
     
-    private func setupNavBar(){
+    private func setupNavBar() {
         title = "Избранное"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.barTintColor = .appMain
@@ -62,12 +60,10 @@ class FavoriteView: UIViewController {
             NSAttributedString.Key.foregroundColor : UIColor.white
         ]
     }
+
 }
 
-
-
-
-extension FavoriteView: UICollectionViewDataSource{
+extension FavotiteView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         presenter.post?.count ?? 0
     }
@@ -78,27 +74,23 @@ extension FavoriteView: UICollectionViewDataSource{
         if let item = presenter.post?[indexPath.item] {
             cell.configureCell(item: item)
         }
-        
         return cell
     }
-    
-    
 }
 
-extension FavoriteView: UICollectionViewDelegate{
+extension FavotiteView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = presenter.post?[indexPath.item] else { return }
         
         let detailsView = Builder.createDetailsController(item: item)
         navigationController?.pushViewController(detailsView, animated: true)
     }
-   
-    }
+}
 
 
-
-extension FavoriteView: FavoriteViewProtocol{
-    func showPost() {
+extension FavotiteView: FavoriteViewProtocol {
+    func showPosts() {
         collectionView.reloadData()
     }
 }
+
