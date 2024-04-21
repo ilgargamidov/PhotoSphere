@@ -5,7 +5,8 @@
 //  Created by Илгар Гамидов on 16.04.2024.
 //
 
-import Foundation
+import UIKit
+import CoreLocation
 
 class PostDate: Identifiable {
     let id = UUID().uuidString
@@ -48,7 +49,7 @@ class PostItem: Identifiable {
     let description: String?
     let isFavorite: Bool
     let date: Date
-    let location: CLLocationCoordinate2D
+    let location: CLLocationCoordinate2D?
     
     init(photos: [String], comments: [Commet]?, tags: [String]?, description: String?, isFavorite: Bool = false, date: Date, location: CLLocationCoordinate2D? = nil) {
         self.photos = photos

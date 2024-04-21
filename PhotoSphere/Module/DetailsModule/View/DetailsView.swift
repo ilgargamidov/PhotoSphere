@@ -164,6 +164,7 @@ extension DetailsView: UICollectionViewDataSource{
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailsPhotoCell.reuseId, for: indexPath) as! DetailsPhotoCell
             cell.configureCell(image: item.photos[indexPath.row])
+            return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionCell.reuseId, for: indexPath) as! TagCollectionCell
             cell.cellConfigure(tagText: item.tags?[indexPath.item] ?? "")
@@ -180,7 +181,7 @@ extension DetailsView: UICollectionViewDataSource{
         case 4:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailsAddCommentCell.reuseId, for: indexPath) as! DetailsAddCommentCell
             cell.completion = {[weak self] comment in
-                guard let self = self else { return }
+                guard self != nil else { return }
                 print(comment)
                 
             }
@@ -188,21 +189,22 @@ extension DetailsView: UICollectionViewDataSource{
         case 5:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailsMapCell.reuseId, for: indexPath) as! DetailsMapCell
             cell.configureCell(coordinate: item.location)
-            
+            return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
             cell.backgroundColor = .red
             return cell
         }
+        
     }
+    
 }
-
-
-
-extension DetailsView: DetailsViewProtocol {
-            
-        }
-
+    
+    extension DetailsView: DetailsViewProtocol {
         
-        
+    }
+    
+    
+    
+    
 
