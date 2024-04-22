@@ -24,7 +24,7 @@ class TabBarView: UITabBarController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(hideTabBar), name: .hideTabBar, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(goToMainView), name: .goToMain, object: nil)
          tabs.enumerated().forEach {
             let offsets: [Double] = [-100, 0, 100]
             let tabButton = createTabBarButton(icon: $0.element, tag: $0.offset, offsetX: offsets[$0.offset], isBigButton: $0.offset == 1 ? true : false)
@@ -33,6 +33,11 @@ class TabBarView: UITabBarController {
         }
         
         view.addSubview(tabBarView)
+    }
+    
+    @objc func goToMainView(){
+        self.selectedIndex = 0
+        
     }
     
     @objc func hideTabBar(sender: Notification) {

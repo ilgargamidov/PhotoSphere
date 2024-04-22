@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044629B52BD6BE490062B751 /* CameraViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044629B42BD6BE490062B751 /* CameraViewPresenter.swift */; };
+		044629B82BD6D5DE0062B751 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044629B72BD6D5DE0062B751 /* CameraService.swift */; };
 		045FE8B62BCD90E500B0084E /* MainPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FE8B52BCD90E500B0084E /* MainPostCell.swift */; };
 		045FE8BA2BCD923800B0084E /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FE8B92BCD923800B0084E /* PostItem.swift */; };
 		045FE8C12BCD998300B0084E /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FE8C02BCD998300B0084E /* TagCollectionView.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		044629B42BD6BE490062B751 /* CameraViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewPresenter.swift; sourceTree = "<group>"; };
+		044629B72BD6D5DE0062B751 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		045FE8B52BCD90E500B0084E /* MainPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPostCell.swift; sourceTree = "<group>"; };
 		045FE8B92BCD923800B0084E /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostItem.swift; path = PhotoSphere/Module/MainScreenModule/View/PostItem.swift; sourceTree = SOURCE_ROOT; };
 		045FE8C02BCD998300B0084E /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		044629B32BD6BE0D0062B751 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				044629B42BD6BE490062B751 /* CameraViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		044629B62BD6D5B70062B751 /* CameraServis */ = {
+			isa = PBXGroup;
+			children = (
+				044629B72BD6D5DE0062B751 /* CameraService.swift */,
+			);
+			path = CameraServis;
+			sourceTree = "<group>";
+		};
 		045FE8BB2BCD98D000B0084E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +405,8 @@
 		D6F0F7A12BC93705006E38C4 /* CameraModule */ = {
 			isa = PBXGroup;
 			children = (
+				044629B62BD6D5B70062B751 /* CameraServis */,
+				044629B32BD6BE0D0062B751 /* Presenter */,
 				D6F0F7A52BC937E5006E38C4 /* View */,
 			);
 			path = CameraModule;
@@ -491,6 +513,7 @@
 				04E1D7DA2BD42CB10019743D /* DetailsAddCommentCell.swift in Sources */,
 				04E1D7DC2BD42E020019743D /* UITextField.ext.swift in Sources */,
 				D61394672BD6B1500067A735 /* PhotoViewPresenter.swift in Sources */,
+				044629B82BD6D5DE0062B751 /* CameraService.swift in Sources */,
 				D6DBD9282BD1745500BE31F1 /* MainPostHeader.swift in Sources */,
 				045FE8BA2BCD923800B0084E /* PostItem.swift in Sources */,
 				D6F0F75E2BC68977006E38C4 /* PasscodeView.swift in Sources */,
@@ -517,6 +540,7 @@
 				045FE8CC2BCD9C6900B0084E /* FavoriteCell.swift in Sources */,
 				045FE8B62BCD90E500B0084E /* MainPostCell.swift in Sources */,
 				D6F0F7682BC6BF37006E38C4 /* UIView.ext.swift in Sources */,
+				044629B52BD6BE490062B751 /* CameraViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +687,7 @@
 				DEVELOPMENT_TEAM = VLU93KXK2X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoSphere/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Приложение может использовать вашу систему";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -690,6 +715,7 @@
 				DEVELOPMENT_TEAM = VLU93KXK2X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoSphere/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Приложение может использовать вашу систему";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
