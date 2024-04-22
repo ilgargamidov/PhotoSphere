@@ -127,4 +127,3 @@ extension MainPostCell: UICollectionViewDataSource {
         return cell
     }
 }
-

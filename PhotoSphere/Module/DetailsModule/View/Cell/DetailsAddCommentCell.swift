@@ -2,7 +2,7 @@
 //  DetailsAddCommentCell.swift
 //  PhotoSphere
 //
-//  Created by mac on 20.04.2024.
+//  Created by Илгар Гамидов on 22.04.2024.
 //
 
 import UIKit
@@ -11,11 +11,11 @@ class DetailsAddCommentCell: UICollectionViewCell, CollectionViewCellProtocol {
     static var reuseId: String = "DetailsAddCommentCell"
     
     var completion: ((String) -> ())?
+    
     lazy var action = UIAction { [weak self] sender in
         let textField = sender.sender as! UITextField
         self?.completion?(textField.text ?? "")
         self?.endEditing(true)
-        
     }
     
     lazy var textField: UITextField = {
@@ -23,6 +23,7 @@ class DetailsAddCommentCell: UICollectionViewCell, CollectionViewCellProtocol {
         $0.layer.cornerRadius = bounds.height/2
         $0.placeholder = "Добавить комментарий"
         $0.setLeftOffset()
+        
         return $0
     }(UITextField(frame: bounds, primaryAction: action))
     
@@ -35,3 +36,4 @@ class DetailsAddCommentCell: UICollectionViewCell, CollectionViewCellProtocol {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

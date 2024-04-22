@@ -2,7 +2,7 @@
 //  MainScreenView.swift
 //  PhotoSphere
 //
-//  Created by Илгар Гамидов on 12.04.2024.
+//  Created by Илгар Гамидов on 11.04.2024.
 //
 
 import UIKit
@@ -72,6 +72,10 @@ class MainScreenView: UIViewController {
         topInsets = collectionView.adjustedContentInset.top
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.post(name: .hideTabBar, object: nil, userInfo: ["isHide": false])
+    }
+    
 }
 
 extension MainScreenView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -127,5 +131,4 @@ extension MainScreenView: MainScreenViewProtocol {
     
     }
 }
-
 

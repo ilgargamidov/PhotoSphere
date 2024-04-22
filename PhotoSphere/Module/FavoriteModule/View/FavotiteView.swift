@@ -1,8 +1,8 @@
 //
-//  FavotiteView.swift
+//  FavoriteView.swift
 //  PhotoSphere
 //
-//  Created by Илгар Гамидов on 12.04.2024.
+//  Created by Илгар Гамидов on 11.04.2024.
 //
 
 import UIKit
@@ -44,6 +44,7 @@ class FavotiteView: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupNavBar()
+        NotificationCenter.default.post(name: .hideTabBar, object: nil, userInfo: ["isHide": false])
     }
     
     private func setupNavBar() {

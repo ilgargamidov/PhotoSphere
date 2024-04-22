@@ -47,3 +47,4 @@ extension Date{
 enum DateFormatType {
     case full, onlyDate, onlyYear
 }
+

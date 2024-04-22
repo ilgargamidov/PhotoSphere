@@ -2,7 +2,7 @@
 //  DetailsMapCell.swift
 //  PhotoSphere
 //
-//  Created by mac on 20.04.2024.
+//  Created by Илгар Гамидов on 22.04.2024.
 //
 
 import UIKit
@@ -20,9 +20,11 @@ class DetailsMapCell: UICollectionViewCell, CollectionViewCellProtocol {
         super.init(frame: frame)
         addSubview(mapView)
     }
-    func configureCell(coordinate: CLLocationCoordinate2D?){
-        guard let coordinate = coordinate else {return}
+    
+    func configureCell(coordinate: CLLocationCoordinate2D?) {
+        guard let coordinate = coordinate else { return }
         mapView.setRegion(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
+        
         let pin = MKPointAnnotation()
         pin.coordinate = coordinate
         mapView.addAnnotation(pin)
@@ -31,6 +33,5 @@ class DetailsMapCell: UICollectionViewCell, CollectionViewCellProtocol {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }
+

@@ -1,8 +1,8 @@
 //
-//  DetailsPhotoC ell.swift
+//  DetailsPhotoCell.swift
 //  PhotoSphere
 //
-//  Created by mac on 20.04.2024.
+//  Created by Илгар Гамидов on 22.04.2024.
 //
 
 import UIKit
@@ -14,10 +14,11 @@ class DetailsPhotoCell: UICollectionViewCell, CollectionViewCellProtocol {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
         return $0
+
     }(UIImageView(frame: bounds))
     
     lazy var imageMenuButton: UIButton = {
-        $0.setBackgroundImage(.menuIcon, for: .normal)
+        $0.setBackgroundImage(.dottetIcon, for: .normal)
         $0.frame = CGRect(x: cellImage.frame.width - 50, y: 30, width: 31, height: 6)
         return $0
     }(UIButton())
@@ -29,6 +30,7 @@ class DetailsPhotoCell: UICollectionViewCell, CollectionViewCellProtocol {
         addSubview(cellImage)
         cellImage.addSubview(imageMenuButton)
     }
+    
     func configureCell(image: String) {
         cellImage.image = UIImage(named: image)
     }
@@ -36,6 +38,5 @@ class DetailsPhotoCell: UICollectionViewCell, CollectionViewCellProtocol {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }
+

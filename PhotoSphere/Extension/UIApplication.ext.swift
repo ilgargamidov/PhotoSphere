@@ -2,7 +2,7 @@
 //  UIApplication.ext.swift
 //  PhotoSphere
 //
-//  Created by mac on 15.04.2024.
+//  Created by Илгар Гамидов on 17.04.2024.
 //
 
 import UIKit
@@ -13,3 +13,4 @@ extension UIApplication {
         return scene?.windows.first?.safeAreaInsets.top ?? .zero
     }
 }
+

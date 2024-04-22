@@ -2,7 +2,7 @@
 //  MainScreenPresenter.swift
 //  PhotoSphere
 //
-//  Created by Илгар Гамидов on 12.04.2024.
+//  Created by Илгар Гамидов on 11.04.2024.
 //
 
 import UIKit
@@ -27,3 +27,4 @@ extension MainScreenPresenter: MainScreenPresenterProtocol{
     view?.showPosts()
   }
 }
+
