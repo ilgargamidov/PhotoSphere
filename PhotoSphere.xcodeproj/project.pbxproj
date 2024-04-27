@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		044629B52BD6BE490062B751 /* CameraViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044629B42BD6BE490062B751 /* CameraViewPresenter.swift */; };
 		044629B82BD6D5DE0062B751 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044629B72BD6D5DE0062B751 /* CameraService.swift */; };
+		044629BE2BDA3AC00062B751 /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044629BD2BDA3AC00062B751 /* AddPostView.swift */; };
+		044629C32BDA4F070062B751 /* AddPostPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044629C22BDA4F070062B751 /* AddPostPhotoCell.swift */; };
+		044629C52BDA5A4F0062B751 /* AddPostTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044629C42BDA5A4F0062B751 /* AddPostTagCell.swift */; };
+		044629C72BDBF5DE0062B751 /* AddPostFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044629C62BDBF5DE0062B751 /* AddPostFieldCell.swift */; };
+		044629C92BDD39230062B751 /* AddPostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044629C82BDD39230062B751 /* AddPostPresenter.swift */; };
 		045FE8B62BCD90E500B0084E /* MainPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FE8B52BCD90E500B0084E /* MainPostCell.swift */; };
 		045FE8BA2BCD923800B0084E /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FE8B92BCD923800B0084E /* PostItem.swift */; };
 		045FE8C12BCD998300B0084E /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045FE8C02BCD998300B0084E /* TagCollectionView.swift */; };
@@ -51,6 +56,11 @@
 /* Begin PBXFileReference section */
 		044629B42BD6BE490062B751 /* CameraViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewPresenter.swift; sourceTree = "<group>"; };
 		044629B72BD6D5DE0062B751 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		044629BD2BDA3AC00062B751 /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
+		044629C22BDA4F070062B751 /* AddPostPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostPhotoCell.swift; sourceTree = "<group>"; };
+		044629C42BDA5A4F0062B751 /* AddPostTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostTagCell.swift; sourceTree = "<group>"; };
+		044629C62BDBF5DE0062B751 /* AddPostFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostFieldCell.swift; sourceTree = "<group>"; };
+		044629C82BDD39230062B751 /* AddPostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostPresenter.swift; sourceTree = "<group>"; };
 		045FE8B52BCD90E500B0084E /* MainPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPostCell.swift; sourceTree = "<group>"; };
 		045FE8B92BCD923800B0084E /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostItem.swift; path = PhotoSphere/Module/MainScreenModule/View/PostItem.swift; sourceTree = SOURCE_ROOT; };
 		045FE8C02BCD998300B0084E /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
@@ -117,6 +127,50 @@
 				044629B72BD6D5DE0062B751 /* CameraService.swift */,
 			);
 			path = CameraServis;
+			sourceTree = "<group>";
+		};
+		044629B92BDA39FF0062B751 /* AddPost */ = {
+			isa = PBXGroup;
+			children = (
+				044629BC2BDA3A4A0062B751 /* Model */,
+				044629BB2BDA3A320062B751 /* Presenter */,
+				044629BA2BDA3A1F0062B751 /* View */,
+			);
+			path = AddPost;
+			sourceTree = "<group>";
+		};
+		044629BA2BDA3A1F0062B751 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				044629C12BDA4EAF0062B751 /* Cell */,
+				044629BD2BDA3AC00062B751 /* AddPostView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		044629BB2BDA3A320062B751 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				044629C82BDD39230062B751 /* AddPostPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		044629BC2BDA3A4A0062B751 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		044629C12BDA4EAF0062B751 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				044629C22BDA4F070062B751 /* AddPostPhotoCell.swift */,
+				044629C42BDA5A4F0062B751 /* AddPostTagCell.swift */,
+				044629C62BDBF5DE0062B751 /* AddPostFieldCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		045FE8BB2BCD98D000B0084E /* Helpers */ = {
@@ -250,6 +304,7 @@
 		D6F0F7592BC68886006E38C4 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				044629B92BDA39FF0062B751 /* AddPost */,
 				D61394632BD6B0990067A735 /* PhotoViewModule */,
 				D639263D2BCE6B7A00D936FB /* DetailsModule */,
 				D6F0F7A12BC93705006E38C4 /* CameraModule */,
@@ -513,12 +568,14 @@
 				04E1D7DA2BD42CB10019743D /* DetailsAddCommentCell.swift in Sources */,
 				04E1D7DC2BD42E020019743D /* UITextField.ext.swift in Sources */,
 				D61394672BD6B1500067A735 /* PhotoViewPresenter.swift in Sources */,
+				044629BE2BDA3AC00062B751 /* AddPostView.swift in Sources */,
 				044629B82BD6D5DE0062B751 /* CameraService.swift in Sources */,
 				D6DBD9282BD1745500BE31F1 /* MainPostHeader.swift in Sources */,
 				045FE8BA2BCD923800B0084E /* PostItem.swift in Sources */,
 				D6F0F75E2BC68977006E38C4 /* PasscodeView.swift in Sources */,
 				045FE8C52BCD9A4200B0084E /* UIApplication.ext.swift in Sources */,
 				045FE8CA2BCD9C0F00B0084E /* FavoriteViewPresenter.swift in Sources */,
+				044629C72BDBF5DE0062B751 /* AddPostFieldCell.swift in Sources */,
 				D6F0F7462BC67F88006E38C4 /* AppDelegate.swift in Sources */,
 				045FE8C72BCD9A6800B0084E /* Date.ext.swift in Sources */,
 				D6F0F76B2BC7E9F5006E38C4 /* KeychainManager.swift in Sources */,
@@ -530,17 +587,20 @@
 				045FE8C12BCD998300B0084E /* TagCollectionView.swift in Sources */,
 				D6F0F7482BC67F88006E38C4 /* SceneDelegate.swift in Sources */,
 				D6F0F7A92BC93887006E38C4 /* CameraView.swift in Sources */,
+				044629C52BDA5A4F0062B751 /* AddPostTagCell.swift in Sources */,
 				D6F0F7AF2BC93E48006E38C4 /* MainScreenPresenter.swift in Sources */,
 				D6F0F7622BC689F6006E38C4 /* Builder.swift in Sources */,
 				D6F0F7652BC6985D006E38C4 /* PasscodePresenter.swift in Sources */,
 				D63926432BCE6C7C00D936FB /* DetailsViewPresenter.swift in Sources */,
 				04E1D7D62BD414B70019743D /* DetailsPhotoCell.swift in Sources */,
 				D6F0F7AB2BC938DA006E38C4 /* TabBarView.swift in Sources */,
+				044629C92BDD39230062B751 /* AddPostPresenter.swift in Sources */,
 				D63926482BCE739E00D936FB /* NavigationHeader.swift in Sources */,
 				045FE8CC2BCD9C6900B0084E /* FavoriteCell.swift in Sources */,
 				045FE8B62BCD90E500B0084E /* MainPostCell.swift in Sources */,
 				D6F0F7682BC6BF37006E38C4 /* UIView.ext.swift in Sources */,
 				044629B52BD6BE490062B751 /* CameraViewPresenter.swift in Sources */,
+				044629C32BDA4F070062B751 /* AddPostPhotoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
