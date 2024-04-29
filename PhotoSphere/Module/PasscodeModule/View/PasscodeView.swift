@@ -75,6 +75,7 @@ class PasscodeView: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .appMain
         
+        NotificationCenter.default.addObserver(self, selector: #selector(dismisPasscodeView), name: .dismissPascode, object: nil)
         [keyboardStack, passcodeTitle, codeStack,deleteBtn].forEach{
             view.addSubview($0)
         }
@@ -109,7 +110,9 @@ class PasscodeView: UIViewController {
             
         ])
     }
-
+    @objc func dismisPasscodeView(){
+        dismiss(animated: true)
+    }
 }
 
 
