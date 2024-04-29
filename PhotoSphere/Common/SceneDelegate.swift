@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: scene)
         self.window = window
-        window.rootViewController = Builder.createAddPostViewController(photos: [.img1, .img2, .img3])//Builder.getPasscodeController(passcodeState: checkIssetPasscode(), sceneDelegate: self)
+        window.rootViewController = Builder.getPasscodeController(passcodeState: checkIssetPasscode(), sceneDelegate: self, isSetting: false)
         window.makeKeyAndVisible()
     }
     
